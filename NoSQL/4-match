@@ -1,4 +1,2 @@
 //4-match
-db.school.find({
-    name: "Holbertoon school"
-});
+db.school.find({ name: "Holberton school" });
