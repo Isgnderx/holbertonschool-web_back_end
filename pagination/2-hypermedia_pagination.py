@@ -7,7 +7,8 @@ from typing import List
 
 
 def index_range(page: int, page_size: int) -> tuple:
-    """Səhifə nömrəsi və ölçüsünə əsasən başlanğıc və bitmə indekslərini qaytarır.
+    """Səhifə nömrəsi və ölçüsünə əsasən başlanğıc 
+    və bitmə indekslərini qaytarır.
     """
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
@@ -54,10 +55,12 @@ class Server:
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
-        # 2. Tapşırığın tələb etdiyi kimi get_page metodunu yenidən istifadə edirik
+        # 2. Tapşırığın tələb etdiyi kimi get_page 
+        # metodunu yenidən istifadə edirik
         data = self.get_page(page, page_size)
 
-        # 3. Ümumi səhifə sayını hesablamaq üçün math.ceil funksiyasından istifadə edirik
+        # 3. Ümumi səhifə sayını hesablamaq üçün math.ceil 
+        # funksiyasından istifadə edirik
         total_items = len(self.dataset())
         total_pages = math.ceil(total_items / page_size)
 
