@@ -38,7 +38,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Silinmələrə qarşı davamlı indeks əsaslı səhifələmə məlumatı qaytarır.
+        """Silinmələrə qarşı davamlı indeks əsaslı 
+        səhifələmə məlumatı qaytarır.
         """
         # 1. İlk öncə datanı lüğət formasında götürürük
         indexed_data = self.indexed_dataset()
