@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-Simple pagination modulu
+"""Simple pagination modulu.
 """
 import csv
 import math
@@ -8,7 +7,7 @@ from typing import List
 
 
 def index_range(page: int, page_size: int) -> tuple:
-    """Səhifə nömrəsi və ölçüsünə əsasən başlanğıc və bitmə indekslərini qaytarır.
+    """Səhifə nömrəsi və ölçüsünə əsasən indeksləri qaytarır.
     """
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
@@ -35,11 +34,10 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Returns the appropriate page of the dataset (i.e. the correct list
-        of rows)
+        """Returns the appropriate page of the dataset.
         """
-        # Tip və diapazon yoxlamaları
-        assert type(page) == int and type(page_size) == int
+        # Tip və diapazon yoxlamaları (isinstance istifadə olundu)
+        assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
         # Məlumatları və indeksləri götürürük
